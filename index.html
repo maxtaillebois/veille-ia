@@ -92,6 +92,12 @@
   .card .go { font-size: 14px; font-weight: 600; color: var(--accent); }
   .yt .card .go::before { content: "YouTube "; }
   .sp .card .go::before { content: "Spotify "; }
+  .head { display: flex; align-items: center; gap: 14px; margin-bottom: 12px; }
+  .head img { width: 56px; height: 56px; flex: none; object-fit: cover; background: var(--line); }
+  .yt .head img { border-radius: 50%; }
+  .sp .head img { border-radius: 10px; }
+  .head .meta { margin: 2px 0 0; }
+  .recul .dot { background: var(--accent); }
   .note {
     margin-top: 16px; font-size: 15px; color: var(--muted);
     border-left: 3px solid var(--accent); padding: 4px 0 4px 12px;
@@ -112,8 +118,8 @@
     <p class="lead">Des chaînes pour comprendre, d'autres pour se lancer, et des podcasts à écouter dans les transports. Tout est en français.</p>
     <nav class="jump" aria-label="Aller à">
       <a href="#youtube">Chaînes YouTube</a>
-      <a href="#recul">Pour prendre du recul</a>
       <a href="#podcasts">Podcasts Spotify</a>
+      <a href="#recul">Pour prendre du recul</a>
     </nav>
   </header>
 
@@ -123,14 +129,14 @@
     <h3>Pour comprendre ce qui se passe</h3>
     <div class="grid">
       <a class="card" href="https://www.youtube.com/@Underscore_" target="_blank" rel="noopener">
-        <p class="name">Underscore_</p>
-        <p class="meta">971 k abonnés</p>
+        <div class="head"><img src="img/underscore.jpg" alt="" width="56" height="56" loading="lazy"><div><p class="name">Underscore_</p>
+        <p class="meta">971 k abonnés</p></div></div>
         <p class="desc">L'émission tech de l'équipe de Micode. De longues conversations avec ceux qui construisent l'IA. Ma chaîne la plus regardée.</p>
         <span class="go">→</span>
       </a>
       <a class="card" href="https://www.youtube.com/@DefendIntelligence" target="_blank" rel="noopener">
-        <p class="name">Defend Intelligence</p>
-        <p class="meta">212 k abonnés</p>
+        <div class="head"><img src="img/defend.jpg" alt="" width="56" height="56" loading="lazy"><div><p class="name">Defend Intelligence</p>
+        <p class="meta">212 k abonnés</p></div></div>
         <p class="desc">De la vulgarisation par un ingénieur en IA.</p>
         <span class="go">→</span>
       </a>
@@ -139,64 +145,39 @@
     <h3>Pour s'y mettre concrètement</h3>
     <div class="grid">
       <a class="card" href="https://www.youtube.com/@HenriExplorIA" target="_blank" rel="noopener">
-        <p class="name">Henri ExplorIA</p>
-        <p class="meta">97 k abonnés</p>
+        <div class="head"><img src="img/henri.jpg" alt="" width="56" height="56" loading="lazy"><div><p class="name">Henri ExplorIA</p>
+        <p class="meta">97 k abonnés</p></div></div>
         <p class="desc">Les nouveautés de Claude et ChatGPT, et ce qu'on peut en faire au quotidien.</p>
         <span class="go">→</span>
       </a>
       <a class="card" href="https://www.youtube.com/@jeanviet" target="_blank" rel="noopener">
-        <p class="name">Jeanviet</p>
-        <p class="meta">114 k abonnés</p>
+        <div class="head"><img src="img/jeanviet.jpg" alt="" width="56" height="56" loading="lazy"><div><p class="name">Jeanviet</p>
+        <p class="meta">114 k abonnés</p></div></div>
         <p class="desc">Des tutoriels d'IA générative pour créer du contenu : vidéos, visuels, posts, sites. Très utile pour un communicant.</p>
         <span class="go">→</span>
       </a>
       <a class="card" href="https://www.youtube.com/@Shubham_Sharma" target="_blank" rel="noopener">
-        <p class="name">Shubham Sharma</p>
-        <p class="meta">331 k abonnés</p>
+        <div class="head"><img src="img/shubham.jpg" alt="" width="56" height="56" loading="lazy"><div><p class="name">Shubham Sharma</p>
+        <p class="meta">331 k abonnés</p></div></div>
         <p class="desc">Claude Code, les agents, des comparatifs d'outils, sans jargon inutile.</p>
         <span class="go">→</span>
       </a>
       <a class="card" href="https://www.youtube.com/@elliottpierret" target="_blank" rel="noopener">
-        <p class="name">Elliott Pierret</p>
-        <p class="meta">118 k abonnés</p>
+        <div class="head"><img src="img/elliott.jpg" alt="" width="56" height="56" loading="lazy"><div><p class="name">Elliott Pierret</p>
+        <p class="meta">118 k abonnés</p></div></div>
         <p class="desc">Les agents IA et leur fonctionnement, expliqués pas à pas.</p>
         <span class="go">→</span>
       </a>
       <a class="card" href="https://www.youtube.com/@monstudioIA" target="_blank" rel="noopener">
-        <p class="name">Samuel Gentilhomme</p>
-        <p class="meta">5 k abonnés</p>
+        <div class="head"><img src="img/samuel.jpg" alt="" width="56" height="56" loading="lazy"><div><p class="name">Samuel Gentilhomme</p>
+        <p class="meta">5 k abonnés</p></div></div>
         <p class="desc">Il monte son « studio IA » en public, brique par brique.</p>
         <span class="go">→</span>
       </a>
       <a class="card" href="https://www.youtube.com/@Parlons.IA.2" target="_blank" rel="noopener">
-        <p class="name">Parlons IA</p>
-        <p class="meta">19 k abonnés</p>
+        <div class="head"><img src="img/parlonsia.jpg" alt="" width="56" height="56" loading="lazy"><div><p class="name">Parlons IA</p>
+        <p class="meta">19 k abonnés</p></div></div>
         <p class="desc">ChatGPT et Gemini pour gagner du temps sur les mails, les résumés, les contenus.</p>
-        <span class="go">→</span>
-      </a>
-    </div>
-  </section>
-
-  <section id="recul" class="yt">
-    <h2><span class="dot"></span>Pour prendre du recul</h2>
-    <p class="intro">Pas des chaînes « IA », mais j'y ai vu certaines des meilleures vidéos sur le sujet.</p>
-    <div class="grid">
-      <a class="card" href="https://www.youtube.com/@Micode" target="_blank" rel="noopener">
-        <p class="name">Micode</p>
-        <p class="meta">2 M d'abonnés</p>
-        <p class="desc">La tech grand public, avec beaucoup d'IA.</p>
-        <span class="go">→</span>
-      </a>
-      <a class="card" href="https://www.youtube.com/@numerama" target="_blank" rel="noopener">
-        <p class="name">Numerama</p>
-        <p class="meta">278 k abonnés</p>
-        <p class="desc">L'actualité tech et sciences, avec des enquêtes sur l'IA.</p>
-        <span class="go">→</span>
-      </a>
-      <a class="card" href="https://www.youtube.com/@LeoDuff" target="_blank" rel="noopener">
-        <p class="name">Léo Duff</p>
-        <p class="meta">823 k abonnés</p>
-        <p class="desc">Les stratégies des géants de la tech.</p>
         <span class="go">→</span>
       </a>
     </div>
@@ -206,37 +187,62 @@
     <h2><span class="dot"></span>Podcasts Spotify</h2>
     <div class="grid">
       <a class="card" href="https://open.spotify.com/show/27JsAiSutGZMJHC2TlPeBm" target="_blank" rel="noopener">
-        <p class="name">A la French</p>
-        <p class="meta">Jean-Baptiste Kempf, Steeve Morin, Mehdi Medjaoui</p>
+        <div class="head"><img src="img/alafrench.jpg" alt="" width="56" height="56" loading="lazy"><div><p class="name">A la French</p>
+        <p class="meta">Jean-Baptiste Kempf, Steeve Morin, Mehdi Medjaoui</p></div></div>
         <p class="desc">Le rendez-vous tech de la semaine, avec beaucoup d'épisodes sur l'IA et les entreprises françaises qui la font.</p>
         <span class="go">→</span>
       </a>
       <a class="card" href="https://open.spotify.com/show/4dGsAawO4ckJ4918IcWb6m" target="_blank" rel="noopener">
-        <p class="name">Changement d'époque en cours</p>
-        <p class="meta">Laurent Nicolas-Guennoc (Converteo)</p>
+        <div class="head"><img src="img/changement.jpg" alt="" width="56" height="56" loading="lazy"><div><p class="name">Changement d'époque en cours</p>
+        <p class="meta">Laurent Nicolas-Guennoc (Converteo)</p></div></div>
         <p class="desc">De longs entretiens avec des experts pour comprendre l'IA et ce qu'elle bouleverse : travail, création, économie.</p>
         <span class="go">→</span>
       </a>
       <a class="card" href="https://open.spotify.com/show/4KtU82jRLNIHbI2srklrQv" target="_blank" rel="noopener">
-        <p class="name">Comptoir IA</p>
-        <p class="meta">Nicolas Guyon</p>
+        <div class="head"><img src="img/comptoir.jpg" alt="" width="56" height="56" loading="lazy"><div><p class="name">Comptoir IA</p>
+        <p class="meta">Nicolas Guyon</p></div></div>
         <p class="desc">Un invité par épisode, souvent un dirigeant ou un créateur, qui raconte comment l'IA change son métier.</p>
         <span class="go">→</span>
       </a>
       <a class="card" href="https://open.spotify.com/show/72pCvfRNnBLCSfFkSpO36g" target="_blank" rel="noopener">
-        <p class="name">Ex Machina, l'ère des algorithmes</p>
-        <p class="meta">Université Paris Dauphine - PSL</p>
+        <div class="head"><img src="img/exmachina.jpg" alt="" width="56" height="56" loading="lazy"><div><p class="name">Ex Machina, l'ère des algorithmes</p>
+        <p class="meta">Université Paris Dauphine - PSL</p></div></div>
         <p class="desc">Des chercheurs expliquent les algorithmes du quotidien, de ChatGPT aux réseaux sociaux.</p>
         <span class="go">→</span>
       </a>
       <a class="card" href="https://open.spotify.com/show/1MidB71rbYIRDIrcej073j" target="_blank" rel="noopener">
-        <p class="name">Tech Café : tech &amp; IA</p>
-        <p class="meta">Guillaume Vendé</p>
+        <div class="head"><img src="img/techcafe.jpg" alt="" width="56" height="56" loading="lazy"><div><p class="name">Tech Café : tech &amp; IA</p>
+        <p class="meta">Guillaume Vendé</p></div></div>
         <p class="desc">Une veille tech et IA, avec des dossiers et des interviews, facile à écouter au quotidien.</p>
         <span class="go">→</span>
       </a>
     </div>
     <p class="note">Underscore_, cité plus haut, existe aussi en podcast sur Spotify.</p>
+  </section>
+
+  <section id="recul" class="yt recul">
+    <h2><span class="dot"></span>Pour prendre du recul</h2>
+    <p class="intro">Pas des chaînes « IA », mais j'y ai vu certaines des meilleures vidéos sur le sujet.</p>
+    <div class="grid">
+      <a class="card" href="https://www.youtube.com/@Micode" target="_blank" rel="noopener">
+        <div class="head"><img src="img/micode.jpg" alt="" width="56" height="56" loading="lazy"><div><p class="name">Micode</p>
+        <p class="meta">2 M d'abonnés</p></div></div>
+        <p class="desc">La tech grand public, avec beaucoup d'IA.</p>
+        <span class="go">→</span>
+      </a>
+      <a class="card" href="https://www.youtube.com/@numerama" target="_blank" rel="noopener">
+        <div class="head"><img src="img/numerama.jpg" alt="" width="56" height="56" loading="lazy"><div><p class="name">Numerama</p>
+        <p class="meta">278 k abonnés</p></div></div>
+        <p class="desc">L'actualité tech et sciences, avec des enquêtes sur l'IA.</p>
+        <span class="go">→</span>
+      </a>
+      <a class="card" href="https://www.youtube.com/@LeoDuff" target="_blank" rel="noopener">
+        <div class="head"><img src="img/leoduff.jpg" alt="" width="56" height="56" loading="lazy"><div><p class="name">Léo Duff</p>
+        <p class="meta">823 k abonnés</p></div></div>
+        <p class="desc">Les stratégies des géants de la tech.</p>
+        <span class="go">→</span>
+      </a>
+    </div>
   </section>
 
   <footer>
