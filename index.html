@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ma veille IA</title>
+<meta name="description" content="Les chaînes YouTube et les podcasts sur l'IA que je suis, avec un mot sur chacun.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f7f7f4;
+    --surface: #ffffff;
+    --text: #1d1f1c;
+    --muted: #5d625a;
+    --line: #e3e4de;
+    --accent: #5f8f1f;
+    --accent-soft: #eef4e2;
+    --yt: #c4302b;
+    --sp: #1a9e4b;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #141613;
+      --surface: #1d201b;
+      --text: #ecede8;
+      --muted: #a3a89d;
+      --line: #2e322b;
+      --accent: #a5d65a;
+      --accent-soft: #263018;
+      --yt: #ff6b63;
+      --sp: #4fd283;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #141613;
+    --surface: #1d201b;
+    --text: #ecede8;
+    --muted: #a3a89d;
+    --line: #2e322b;
+    --accent: #a5d65a;
+    --accent-soft: #263018;
+    --yt: #ff6b63;
+    --sp: #4fd283;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-size: 16px;
+    line-height: 1.55;
+  }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 56px 20px 72px; }
+  header { margin-bottom: 40px; }
+  .kicker {
+    display: inline-block;
+    font-size: 13px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase;
+    color: var(--accent); background: var(--accent-soft);
+    padding: 4px 10px; border-radius: 999px;
+  }
+  h1 { font-size: clamp(30px, 5vw, 44px); line-height: 1.1; margin: 16px 0 14px; letter-spacing: -.02em; }
+  .lead { font-size: 18px; color: var(--muted); max-width: 640px; margin: 0; }
+  nav.jump { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
+  nav.jump a {
+    font-size: 14px; font-weight: 500; text-decoration: none; color: var(--text);
+    border: 1px solid var(--line); background: var(--surface);
+    padding: 7px 14px; border-radius: 999px;
+  }
+  nav.jump a:hover { border-color: var(--accent); }
+  section { margin-top: 48px; }
+  h2 { font-size: 24px; margin: 0 0 6px; letter-spacing: -.01em; display: flex; align-items: center; gap: 10px; }
+  h2 .dot { width: 10px; height: 10px; border-radius: 50%; flex: none; }
+  .yt .dot { background: var(--yt); }
+  .sp .dot { background: var(--sp); }
+  .intro { color: var(--muted); margin: 0 0 20px; }
+  h3 { font-size: 15px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; margin: 28px 0 12px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; }
+  .card {
+    display: flex; flex-direction: column;
+    background: var(--surface); border: 1px solid var(--line); border-radius: 14px;
+    padding: 18px 18px 16px; text-decoration: none; color: inherit;
+    transition: border-color .15s, transform .15s;
+  }
+  .card:hover { border-color: var(--accent); transform: translateY(-2px); }
+  .card .name { font-weight: 600; font-size: 17px; margin: 0; }
+  .card .meta { font-size: 13px; color: var(--muted); margin: 2px 0 10px; }
+  .card .desc { font-size: 15px; margin: 0 0 14px; flex: 1; }
+  .card .go { font-size: 14px; font-weight: 600; color: var(--accent); }
+  .yt .card .go::before { content: "YouTube "; }
+  .sp .card .go::before { content: "Spotify "; }
+  .note {
+    margin-top: 16px; font-size: 15px; color: var(--muted);
+    border-left: 3px solid var(--accent); padding: 4px 0 4px 12px;
+  }
+  footer { margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--line); font-size: 14px; color: var(--muted); }
+  @media (max-width: 520px) {
+    .wrap { padding: 36px 16px 56px; }
+    .lead { font-size: 16px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <span class="kicker">Veille IA</span>
+    <h1>Les podcasts et chaînes YouTube sur l'IA que je suis</h1>
+    <p class="lead">Des chaînes pour comprendre, d'autres pour se lancer, et des podcasts à écouter dans les transports. Tout est en français.</p>
+    <nav class="jump" aria-label="Aller à">
+      <a href="#youtube">Chaînes YouTube</a>
+      <a href="#recul">Pour prendre du recul</a>
+      <a href="#podcasts">Podcasts Spotify</a>
+    </nav>
+  </header>
+
+  <section id="youtube" class="yt">
+    <h2><span class="dot"></span>Chaînes YouTube</h2>
+
+    <h3>Pour comprendre ce qui se passe</h3>
+    <div class="grid">
+      <a class="card" href="https://www.youtube.com/@Underscore_" target="_blank" rel="noopener">
+        <p class="name">Underscore_</p>
+        <p class="meta">971 k abonnés</p>
+        <p class="desc">L'émission tech de l'équipe de Micode. De longues conversations avec ceux qui construisent l'IA. Ma chaîne la plus regardée.</p>
+        <span class="go">→</span>
+      </a>
+      <a class="card" href="https://www.youtube.com/@DefendIntelligence" target="_blank" rel="noopener">
+        <p class="name">Defend Intelligence</p>
+        <p class="meta">212 k abonnés</p>
+        <p class="desc">De la vulgarisation par un ingénieur en IA.</p>
+        <span class="go">→</span>
+      </a>
+    </div>
+
+    <h3>Pour s'y mettre concrètement</h3>
+    <div class="grid">
+      <a class="card" href="https://www.youtube.com/@HenriExplorIA" target="_blank" rel="noopener">
+        <p class="name">Henri ExplorIA</p>
+        <p class="meta">97 k abonnés</p>
+        <p class="desc">Les nouveautés de Claude et ChatGPT, et ce qu'on peut en faire au quotidien.</p>
+        <span class="go">→</span>
+      </a>
+      <a class="card" href="https://www.youtube.com/@jeanviet" target="_blank" rel="noopener">
+        <p class="name">Jeanviet</p>
+        <p class="meta">114 k abonnés</p>
+        <p class="desc">Des tutoriels d'IA générative pour créer du contenu : vidéos, visuels, posts, sites. Très utile pour un communicant.</p>
+        <span class="go">→</span>
+      </a>
+      <a class="card" href="https://www.youtube.com/@Shubham_Sharma" target="_blank" rel="noopener">
+        <p class="name">Shubham Sharma</p>
+        <p class="meta">331 k abonnés</p>
+        <p class="desc">Claude Code, les agents, des comparatifs d'outils, sans jargon inutile.</p>
+        <span class="go">→</span>
+      </a>
+      <a class="card" href="https://www.youtube.com/@elliottpierret" target="_blank" rel="noopener">
+        <p class="name">Elliott Pierret</p>
+        <p class="meta">118 k abonnés</p>
+        <p class="desc">Les agents IA et leur fonctionnement, expliqués pas à pas.</p>
+        <span class="go">→</span>
+      </a>
+      <a class="card" href="https://www.youtube.com/@monstudioIA" target="_blank" rel="noopener">
+        <p class="name">Samuel Gentilhomme</p>
+        <p class="meta">5 k abonnés</p>
+        <p class="desc">Il monte son « studio IA » en public, brique par brique.</p>
+        <span class="go">→</span>
+      </a>
+      <a class="card" href="https://www.youtube.com/@Parlons.IA.2" target="_blank" rel="noopener">
+        <p class="name">Parlons IA</p>
+        <p class="meta">19 k abonnés</p>
+        <p class="desc">ChatGPT et Gemini pour gagner du temps sur les mails, les résumés, les contenus.</p>
+        <span class="go">→</span>
+      </a>
+    </div>
+  </section>
+
+  <section id="recul" class="yt">
+    <h2><span class="dot"></span>Pour prendre du recul</h2>
+    <p class="intro">Pas des chaînes « IA », mais j'y ai vu certaines des meilleures vidéos sur le sujet.</p>
+    <div class="grid">
+      <a class="card" href="https://www.youtube.com/@Micode" target="_blank" rel="noopener">
+        <p class="name">Micode</p>
+        <p class="meta">2 M d'abonnés</p>
+        <p class="desc">La tech grand public, avec beaucoup d'IA.</p>
+        <span class="go">→</span>
+      </a>
+      <a class="card" href="https://www.youtube.com/@numerama" target="_blank" rel="noopener">
+        <p class="name">Numerama</p>
+        <p class="meta">278 k abonnés</p>
+        <p class="desc">L'actualité tech et sciences, avec des enquêtes sur l'IA.</p>
+        <span class="go">→</span>
+      </a>
+      <a class="card" href="https://www.youtube.com/@LeoDuff" target="_blank" rel="noopener">
+        <p class="name">Léo Duff</p>
+        <p class="meta">823 k abonnés</p>
+        <p class="desc">Les stratégies des géants de la tech.</p>
+        <span class="go">→</span>
+      </a>
+    </div>
+  </section>
+
+  <section id="podcasts" class="sp">
+    <h2><span class="dot"></span>Podcasts Spotify</h2>
+    <div class="grid">
+      <a class="card" href="https://open.spotify.com/show/27JsAiSutGZMJHC2TlPeBm" target="_blank" rel="noopener">
+        <p class="name">A la French</p>
+        <p class="meta">Jean-Baptiste Kempf, Steeve Morin, Mehdi Medjaoui</p>
+        <p class="desc">Le rendez-vous tech de la semaine, avec beaucoup d'épisodes sur l'IA et les entreprises françaises qui la font.</p>
+        <span class="go">→</span>
+      </a>
+      <a class="card" href="https://open.spotify.com/show/4dGsAawO4ckJ4918IcWb6m" target="_blank" rel="noopener">
+        <p class="name">Changement d'époque en cours</p>
+        <p class="meta">Laurent Nicolas-Guennoc (Converteo)</p>
+        <p class="desc">De longs entretiens avec des experts pour comprendre l'IA et ce qu'elle bouleverse : travail, création, économie.</p>
+        <span class="go">→</span>
+      </a>
+      <a class="card" href="https://open.spotify.com/show/4KtU82jRLNIHbI2srklrQv" target="_blank" rel="noopener">
+        <p class="name">Comptoir IA</p>
+        <p class="meta">Nicolas Guyon</p>
+        <p class="desc">Un invité par épisode, souvent un dirigeant ou un créateur, qui raconte comment l'IA change son métier.</p>
+        <span class="go">→</span>
+      </a>
+      <a class="card" href="https://open.spotify.com/show/72pCvfRNnBLCSfFkSpO36g" target="_blank" rel="noopener">
+        <p class="name">Ex Machina, l'ère des algorithmes</p>
+        <p class="meta">Université Paris Dauphine - PSL</p>
+        <p class="desc">Des chercheurs expliquent les algorithmes du quotidien, de ChatGPT aux réseaux sociaux.</p>
+        <span class="go">→</span>
+      </a>
+      <a class="card" href="https://open.spotify.com/show/1MidB71rbYIRDIrcej073j" target="_blank" rel="noopener">
+        <p class="name">Tech Café : tech &amp; IA</p>
+        <p class="meta">Guillaume Vendé</p>
+        <p class="desc">Une veille tech et IA, avec des dossiers et des interviews, facile à écouter au quotidien.</p>
+        <span class="go">→</span>
+      </a>
+    </div>
+    <p class="note">Underscore_, cité plus haut, existe aussi en podcast sur Spotify.</p>
+  </section>
+
+  <footer>
+    Liste tenue par Maxime Taillebois, chef de projet IA et communication chez Procivis. Mise à jour le 16 novembre 2026.
+  </footer>
+
+</div>
+</body>
+</html>
